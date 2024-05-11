@@ -1,0 +1,86 @@
+Тест
+6/6 points (graded)
+1. Яка з наведених нижче форм дозволяє відправити на сервер методом POST електронну адресу та пароль користувача (напр., при спробі аутентифікації), якщо відомо, що URL серверу є коректним?
+
+<form action="/login" method="post">
+   <label for="email">E-mail:</label>
+   <input id="email" name="email" type="email" />
+   <label for="password">Password:</label>
+   <input id="password" name="password" type="password" />
+</form>
+2. Які значення можуть бути для атрибута “method” в тега “form” (може бути обрано декілька варіантів)?
+POST;
+GET;
+3. Оберіть варіант коду, який відповідає семантиці:
+  <header>
+    <img src="logo.png" alt="Site logo" width="100" height="50" />
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+4. Який з наведених прикладів відповідає правильній організації семантичної HTML розмітки:
+  <body>
+    <header></header>
+    <main></main>
+    <footer></footer>
+  </body>
+5. Ми маємо наступний зразок коду. Оберіть варіант відповіді, яка містить три фрагменти коду, що необхідно вставити (замість трьох крапок …) у позначені коментарями місця
+
+ <main>
+     <!-- 1) Який важливий атрибут відсутній? -->
+     <img src="company-logo.png" width="150" height="50" ... />
+
+     <form action="/login.php" method="post">
+       <div class="form-control">
+         <!-- 2) Який тег та атрибут необхідно додати? -->
+         <...> Email: </...>
+
+         <input
+           id="login-email"
+           type="email"
+           placeholder="Enter your email"
+           required
+           autofocus
+           tabindex="0"
+         />
+       </div>
+
+       <div class="form-control">
+         <label for="login-password">Password:</label>
+
+         <input
+           id="login-password"
+           type="password"
+           placeholder="Enter your password"
+           required
+           tabindex="0"
+         />
+       </div>
+
+       <div class="form-control">
+         <!-- 3) Яке значення tabindex дозволить робити фокус
+           на посиланні за допомогою клавіатури у другу чергу? -->
+         <a href="/restore-password" tabindex="...">Forgot password</a>
+       </div>
+
+       <div class="form-control"> 
+         <input id="login-remember" type="checkbox" checked tabindex="1" />
+
+         <label for="login-remember">Remember me</label>
+       </div>
+
+       <button type="submit" tabindex="0">Submit</button>
+     </form>
+   </main>
+/ ответ !--------------------- alt="Company logo" ,
+ <label for="login-email">Email:</label> ,
+ tabindex="1" ------------------------------------\
+6. Який з наведених прикладів НЕ відповідає принципу доступності:
+ <div>
+    <div>Button 1</div>
+    <div>Button 2</div>
+    <div>Button 3</div>
+  </div>
+
