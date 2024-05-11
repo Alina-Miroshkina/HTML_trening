@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Приклад коректного документу HTML</title>
+</head>
+<body>
+  <h1>Практичне завдання</h1>
+  <h2>Виправлення помилок у документі HTML</h2>
+  <p>Багато тексту...</p>
+  <p><em>Ще більше тексту...</em></p>
+  <img src="https://cdn-icons-png.flaticon.com/512/4086/4086467.png" alt="Міжнародний жіночий день 8 березня">
+  <hr>
+</body>
+</html>
