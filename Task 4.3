@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>HTML: Доступність та семантика</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 aria-label="Веб-сайт про HTML, доступність та семантику">Великий заголовок</h1>
+  </header>
+  <main>
+    <p>Перший параграф</p>
+    <h2>Заголовок підсекції</h2>
+    <ul aria-label="Список елементів">
+      <li>Елемент списку 1</li>
+      <li>Елемент списку 2</li>
+      <li>Елемент списку 3</li>
+    </ul>
+    <figure>
+      <img src="img_girl.jpg" alt="Дівчина в куртці" aria-describedby="img-girl-desc" />
+      <figcaption id="img-girl-desc">Опис зображення: Дівчина в куртці стоїть біля дерева.</figcaption>
+    </figure>
+    <p>Останній параграф</p>
+  </main>
+</body>
+</html>
