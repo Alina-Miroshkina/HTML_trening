@@ -1,0 +1,6 @@
+function calculateTotal() {
+    const price = parseFloat(document.getElementById('price').textContent);
+    const quantity = parseInt(document.getElementById('quantity').value);
+    const totalPrice = price * quantity;
+    document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+}
