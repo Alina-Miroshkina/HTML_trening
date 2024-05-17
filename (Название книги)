@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Описание книги</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>(Название книги)</h1>
+  </header>
+  <main>
+    <div class="book-container">
+      <img src="https://www.ozon.ru/category/oblozhka-dlya-knig/" alt="(Название книги) обложка">
+      <div class="book-info">
+        <h2>(Название книги)</h2>
+        <p>Автор: (Имя и фамилия автора)</p>
+        <p>Жанр: (Жанр книги)</p>
+        <p>Издательство: (Название издательства)</p>
+        <p>Год издания: (Год издания книги)</p>
+        <p>Количество страниц: (Количество страниц книги)</p>
+        <p>ISBN: (ISBN книги)</p>
+        <p>Цена: (Цена книги) €</p>
+<h1>Калькулятор книги</h1>
+  </header>
+  <main>
+    <div class="calculator-container">
+      <div class="book-info">
+        <h2>(Название книги)</h2>
+        <p>Цена: (Цена книги) €
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+-------------------------------------
+СSS
+body {
+  font-family: sans-serif;
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.book-container {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.book-container img {
+  width: 200px;
+  height: 300px;
+  margin-right: 20px;
+}
+
+.book-info {
+  max-width: 500px;
+}
+
+.book-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.book-info p {
+  margin-bottom: 5px;
+}
+
+
