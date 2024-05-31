@@ -1,0 +1,22 @@
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Smith</td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>Brown</td>
+        </tr>
+    </table>
+-------------------------------
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td, th{
+    border: 1px solid black;
+}
