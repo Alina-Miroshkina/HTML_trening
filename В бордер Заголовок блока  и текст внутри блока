@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <div class="my-block">
+        <h2>Заголовок блока</h2>
+        <p>Текст внутри блока</p>
+      </div>
+      
+</body>
+</html>
+-----------------------------------
+.my-block {
+    width: 50%;
+    height: 400px;
+    background-color: #f0f0f0; /* Добавьте цвет фона по желанию */
+    margin: 40px 20%;; /* Добавьте отступы и центрирование по горизонтали */
+    border: 5px solid #230c0c; /* Добавьте границу по желанию */
+    padding: 30px 5%; /* Добавьте отступы внутри блока */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Добавьте тень по желанию */
+    box-sizing: border-box;
