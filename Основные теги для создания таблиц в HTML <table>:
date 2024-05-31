@@ -1,0 +1,129 @@
+Основные теги для создания таблиц в HTML
+<table>: Э
+<tr>: О
+<td>:
+<th>: Предыдущий<th>клетка
+Пример простой таблицы
+*--------------------------*
+html_content = """
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример таблицы в HTML</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Слоновые</h1>
+    <p>
+        Слоновые, или слоны (лат. Elephantidae), — семейство класса <a target="_blank" href="https://ru.wiktionary.org/wiki/%D1%81%D0%BB%D0%BE%D0%BD">млекопитающих</a> из отряда хоботных.
+        В настоящее время к этому семейству относятся 3 ныне живущих вида.
+        Африканские саванные слоны — наиболее крупные наземные млекопитающие.
+    </p>
+    <a target="_blank" href="https://ru.wiktionary.org/wiki/%D1%81%D0%BB%D0%BE%D0%BD">
+        <img src="img/African_Bush_Elephant_Mikumi_cropped.jpeg" alt="African Bush Elephant">
+    </a>
+    <h2>Пример таблицы</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Возраст</th>
+                <th>Город</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Анна</td>
+                <td>28</td>
+                <td>Москва</td>
+            </tr>
+            <tr>
+                <td>Иван</td>
+                <td>34</td>
+                <td>Санкт-Петербург</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Общий итог</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
+--------------------------
+код  для создание таблици где буднт 3 строки 
+в первой строке 4 ячейки 
+в второй строке 7 ячеек 
+в третий строке 8 ячеек 
+**********************************************
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример таблицы</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th rowspan="2">Браузер</th>
+            <th colspan="2">Internet Explorer</th>
+            <th colspan="4">Opera</th>
+            <th colspan="2">Firefox</th>
+        </tr>
+        <tr>
+            <th>6.0</th>
+            <th>7.0</th>
+            <th>7.0</th>
+            <th>8.0</th>
+            <th>9.0</th>
+            <th>10.0</th>
+            <th>1.0</th>
+            <th>2.0</th>
+        </tr>
+        <tr>
+            <td>Поддерживается</td>
+            <td>Нет</td>
+            <td>Да</td>
+            <td>Нет</td>
+            <td>Да</td>
+            <td>Да</td>
+            <td>Да</td>
+            <td>Да</td>
+            <td>Да</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
