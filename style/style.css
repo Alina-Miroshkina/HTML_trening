@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form{
+    width: 581px;
+    height: 1256px;
+    margin: 20px auto;
+    box-shadow: 0 0 15px #3263CD;
+    border-radius: 8px;
+    padding: 20px 35px 25px 35px;
+}
+
+.main{
+    background-color: #87CEFA;
+    color: white;
+    padding: 74px 10px 60px;
+}
+
+.main h1{
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 65px;
+    letter-spacing: 0em;
+    text-align: center;
+    /* margin: 0 10px; */
+    margin-bottom: 20px;
+
+}
+
+[type="text"],
+[type="date"],
+[type="email"],
+[type="number"],
+[type="tel"]{
+    width: 512px;
+    height: 34px;
+    margin: 10px 0;
+    padding-left: 6px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+
+input:focus{
+    border-color: red;
+    outline: none;
+    box-shadow: 0 0 10px red;
+
+}
+
+.user_name{
+    margin: 5px 0;
+}
+
+.user_name h2{
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #808080;
+}
+
+    [type="checkbox"],
+    [type="radio"]{
+        margin: 10px 3.5px 10px 0;
+    }
+    
+    
+    select{
+        margin: 10px 0 15px;
+    }
+    button{
+        padding: 10px 60px;
+        margin: 5px 192px 25px 192px;
+        background-color: #3263CD;
+        color: white;
+        border-radius: 8px;
+    } 
+    [type="text"]:focus,
+    [type="date"]:focus,
+    [type="email"]:focus,
+    [type="number"]:focus,
+    [type="tel"]:focus{
+        border-color: red;
+        outline: none;
+        box-shadow: 0 0 10px red;
+    
+    }
+    
+    .user_name{
+        margin: 5px 0;
+    }
+    
+    h2{
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #808080;
+    }
+    
+    
+    /* contact */
+    
+    
+    [type="checkbox"],
+    [type="radio"]{
+        margin: 10px 3.5px 10px 0;
+    }
+    
+    
+    select{
+        margin: 10px 0 15px;
+    }
+    
+    textarea{
+        width: 512px;
+        height: 56px;
+        resize: none;
+    }
+    
