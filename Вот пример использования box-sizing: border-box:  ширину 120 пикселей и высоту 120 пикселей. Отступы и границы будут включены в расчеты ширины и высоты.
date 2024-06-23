@@ -1,0 +1,10 @@
+Вот пример использования box-sizing: border-box: 
+ширину 120 пикселей и высоту 120 пикселей. Отступы и границы будут включены в расчеты ширины и высоты.
+
+#element {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  border: 10px solid #000;
+  box-sizing: border-box;
+}
