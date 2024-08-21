@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Description and Purchase Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Book Description and Purchase Calculator</h1>
+    </header>
+    <main>
+        <section id="book-description">
+            <h2>Book Title</h2>
+            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fhtmlacademy.ru%2Fblog%2Fjs%2Fbooks-javascript&psig=AOvVaw0YeD8O-68ittSq8Rc2yfET&ust=1716023156263000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJiKkcmqlIYDFQAAAAAdAAAAABAR" alt="Book Cover">
+            <p><strong>Description:</strong> Brief description of the book's plot (2-3 sentences).</p>
+            <p><strong>Author:</strong> Author Name</p>
+            <p><strong>Genre:</strong> Genre of the book</p>
+            <p><strong>Publisher:</strong> Publisher Name</p>
+            <p><strong>Year of Publication:</strong> Year</p>
+            <p><strong>Pages:</strong> Number of pages</p>
+            <p><strong>ISBN:</strong> ISBN number</p>
+            <p><strong>Price:</strong> <span id="price">15</span> €</p>
+        </section>
+        <section id="purchase-calculator">
+            <h2>Purchase Calculator</h2>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1">
+            <button onclick="calculateTotal()">Calculate Total</button>
+            <p>Total Price: <span id="total-price">15</span> €</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
