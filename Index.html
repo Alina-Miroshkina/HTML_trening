@@ -1,0 +1,145 @@
+Конечно! Давайте добавим две кнопки, которые будут отправлять запросы на соответствующие URL при клике.
+
+Вот обновленный пример кода:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Users</title>
+    <style>
+        .users_container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .user-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .user-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .user-card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+        .user-card h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .user-card a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 1em;
+        }
+        .user-card a:hover {
+            text-decoration: underline;
+        }
+        .user-card button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .user-card button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .buttons-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .buttons-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .buttons-container button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons-container">
+        <button id="btn1">Fetch Page 1</button>
+        <button id="btn2">Fetch Page 2</button>
+    </div>
+    <div class="users_container"></div>
+
+    <script>
+        const getUsers = num => {
+            fetch(`https://reqres.in/api/users?page=${num}`)
+                .then(res => res.json())
+                .then(json => {
+                    renderUsers(json.data);
+                })
+                .catch(error => console.error('There was a problem with the fetch operation:', error));
+        };
+
+        function renderUsers(users) {
+            const container = document.querySelector('.users_container');
+            container.innerHTML = ''; // Очищаем контейнер перед добавлением новых карточек
+
+            users.forEach(user => {
+                const card = document.createElement('div');
+                card.className = 'user-card';
+
+                const avatar = document.createElement('img');
+                avatar.src = user.avatar;
+                avatar.alt = user.first_name;
+
+                const name = document.createElement('h3');
+                name.textContent = `${user.first_name} ${user.last_name}`;
+
+                const email = document.createElement('a');
+                email.href = `mailto:${user.email}`;
+                email.textContent = user.email;
+
+                const triggerButton = document.createElement('button');
+                triggerButton.textContent = 'Trigger';
+
+                card.appendChild(avatar);
+                card.appendChild(name);
+                card.appendChild(email);
+                card.appendChild(triggerButton);
+
+                container.appendChild(card);
+            });
+        }
+
+        // Добавляем обработчики событий для кнопок
+        document.getElementById('btn1').addEventListener('click', () => getUsers(1));
+        document.getElementById('btn2').addEventListener('click', () => getUsers(2));
+    </script>
+</body>
+</html>
+```
+
+В этом примере:
+
+1. **Контейнер для кнопок `.buttons-container`**:
+   - Использу
