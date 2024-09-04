@@ -1,0 +1,76 @@
+Lazy loading — это техника, которая позволяет откладывать загрузку изображений до тех пор, пока они не станут видимыми для пользователя. Это помогает улучшить производительность веб-страницы, особенно на медленных соединениях. В современных браузерах можно использовать атрибут loading="lazy" для изображений, но для более старых браузеров можно использовать JavaScript.
+
+Вот пример реализации lazy loading для изображений на главной странице:
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading Example</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Card 1</h2>
+            <img data-src="image1.jpg" alt="Image 1" class="lazyload">
+        </div>
+        <div class="card">
+            <h2>Card 2</h2>
+            <img data-src="image2.jpg" alt="Image 2" class="lazyload">
+        </div>
+        <div class="card">
+            <h2>Card 3</h2>
+            <img data-src="image3.jpg" alt="Image 3" class="lazyload">
+        </div>
+        <div class="card">
+            <h2>Card 4</h2>
+            <img data-src="image4.jpg" alt="Image 4" class="lazyload">
+        </div>
+    </div>
+    <script src="lazyload.js"></script>
+</body>
+</html>
+JavaScript (lazyload.js)
+
+document.addEventListener("DOMContentLoaded", function() {
+    const lazyImages = document.querySelectorAll('img.lazyload');
+
+    const lazyLoad = function() {
+        lazyImages.forEach(function(img) {
+            if (img.getAttribute('data-src') && img.getBoundingClientRect().top <= window.innerHeight) {
+                img.setAttribute('src', img.getAttribute('data-src'));
+                img.removeAttribute('data-src');
+            }
+        });
+    };
+
+    lazyLoad();
+
+    window.addEventListener('scroll', lazyLoad);
+    window.addEventListener('resize', lazyLoad);
+});
