@@ -1,0 +1,98 @@
+Адаптивная верстка обычно достигается с помощью CSS, но JavaScript также может быть использован для добавления дополнительной функциональности и улучшения адаптивности. Вот пример, как можно использовать JavaScript для создания адаптивной верстки:
+
+Использование медиа-запросов в CSS:
+Медиа-запросы позволяют применять стили в зависимости от размера экрана.
+
+
+/* Пример CSS с медиа-запросами */
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+@media (min-width: 600px) {
+    .container {
+        width: 50%;
+        padding: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 30%;
+        padding: 60px;
+    }
+}
+Использование JavaScript для динамического изменения стилей:
+JavaScript может быть использован для изменения стилей в зависимости от размера экрана.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивная верстка</title>
+    <style>
+        .container {
+            width: 100%;
+            padding: 20px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Это адаптивный контейнер.</p>
+    </div>
+    <script>
+        function adjustLayout() {
+            const container = document.querySelector('.container');
+            const width = window.innerWidth;
+
+            if (width >= 1024) {
+                container.style.width = '30%';
+                container.style.padding = '60px';
+            } else if (width >= 600) {
+                container.style.width = '50%';
+                container.style.padding = '40px';
+            } else {
+                container.style.width = '100%';
+                container.style.padding = '20px';
+            }
+        }
+
+        // Вызов функции при загрузке страницы
+        window.addEventListener('load', adjustLayout);
+
+        // Вызов функции при изменении размера окна
+        window.addEventListener('resize', adjustLayout);
+    </script>
+</body>
+</html>
+Использование библиотек для адаптивной верстки:
+Существуют библиотеки, такие как Bootstrap, которые предоставляют готовые компоненты и классы для создания адаптивной верстки.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивная верстка с Bootstrap</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <p>Это адаптивный контейнер с Bootstrap.</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+Эти примеры демонстрируют, как можно использовать CSS и JavaScript для создания адаптивной верстки. Выбор подхода зависит от ваших конкретных требований и предпочтений.
