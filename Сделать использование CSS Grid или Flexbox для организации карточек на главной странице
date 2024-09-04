@@ -1,0 +1,108 @@
+// 9. Сделать использование CSS Grid или Flexbox для организации карточек на главной странице
+
+CSS Grid и Flexbox — это два мощных инструмента для создания сложных макетов. Оба они позволяют организовать элементы на странице в адаптивный и гибкий способ. Вот примеры использования CSS Grid и Flexbox для организации карточек на главной странице.
+
+Пример с использованием CSS Grid
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Example</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Card 1</h2>
+            <p>This is a sample card.</p>
+        </div>
+        <div class="card">
+            <h2>Card 2</h2>
+            <p>This is a sample card.</p>
+        </div>
+        <div class="card">
+            <h2>Card 3</h2>
+            <p>This is a sample card.</p>
+        </div>
+        <div class="card">
+            <h2>Card 4</h2>
+            <p>This is a sample card.</p>
+        </div>
+    </div>
+</body>
+</html>
+Пример с использованием Flexbox
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Example</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Card 1</h2>
+            <p>This is a sample card.</p>
+        </div>
+        <div class="card">
+            <h2>Card 2</h2>
+            <p>This is a sample card.</p>
+        </div>
+        <div class="card">
+            <h2>Card 3</h2>
+            <p>This is a sample card.</p>
+        </div>
+        <div class="card">
+            <h2>Card 4</h2>
+            <p>This is a sample card.</p>
+        </div>
+    </div>
+</body>
+</html>
+Объяснение
+CSS Grid:
+
+display: grid;: Устанавливает контейнер как грид.
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));: Создает гибкие колонки, которые будут автоматически заполнять доступное пространство, но не меньше 200px.
+gap: 20px;: Устанавливает промежуток между элементами.
+Flexbox:
+
+display: flex;: Устанавливает контейнер как флекс.
+flex-wrap: wrap;: Позволяет элементам переноситься на новую строку, если они не помещаются в одну строку.
+gap: 20px;: Устанавливает промежуток между элементами.
+flex: 1 1 200px;: Устанавливает гибкость элементов, чтобы они могли растягиваться и сжиматься, но не меньше 200px.
+Оба подхода позволяют создать адаптивный и гибкий макет для карточек на главной странице. Выбор между CSS Grid и Flexbox зависит от ваших конкретных требований и предпочтений.
