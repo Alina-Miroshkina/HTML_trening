@@ -1,0 +1,197 @@
+Для реализации отправки писем на электронную почту при отзывах и заказах, мы можем использовать Node.js и библиотеку nodemailer. В этом примере мы создадим простое приложение, которое позволяет пользователям оставлять отзывы и делать заказы, а затем отправляет уведомления на электронную почту.
+
+Клиентская часть
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Notification Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container" id="review-form">
+        <h2>Leave a Review</h2>
+        <input type="text" id="review-name" placeholder="Your Name">
+        <input type="email" id="review-email" placeholder="Your Email">
+        <textarea id="review-message" placeholder="Your Review"></textarea>
+        <button onclick="sendReview()">Submit Review</button>
+    </div>
+    <div class="form-container" id="order-form">
+        <h2>Place an Order</h2>
+        <input type="text" id="order-name" placeholder="Your Name">
+        <input type="email" id="order-email" placeholder="Your Email">
+        <input type="text" id="order-item" placeholder="Item Name">
+        <button onclick="sendOrder()">Place Order</button>
+    </div>
+    <script src="email.js"></script>
+</body>
+</html>
+JavaScript (email.js)
+
+async function sendReview() {
+    const name = document.getElementById('review-name').value;
+    const email = document.getElementById('review-email').value;
+    const message = document.getElementById('review-message').value;
+
+    const response = await fetch('/send-review', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, message })
+    });
+
+    const data = await response.json();
+    if (data.success) {
+        alert('Review submitted successfully!');
+    } else {
+        alert('Failed to submit review: ' + data.message);
+    }
+}
+
+async function sendOrder() {
+    const name = document.getElementById('order-name').value;
+    const email = document.getElementById('order-email').value;
+    const item = document.getElementById('order-item').value;
+
+    const response = await fetch('/send-order', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, item })
+    });
+
+    const data = await response.json();
+    if (data.success) {
+        alert('Order placed successfully!');
+    } else {
+        alert('Failed to place order: ' + data.message);
+    }
+}
+Серверная часть
+Node.js и Express
+Установите необходимые пакеты:
+
+npm init -y
+npm install express body-parser nodemailer
+Создайте файл server.js:
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+
+const app = express();
+const PORT = 3000;
+
+app.use(bodyParser.json());
+
+// Настройка транспорта для nodemailer
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'your-email@gmail.com',
+        pass: 'your-email-password'
+    }
+});
+
+// Отправка отзыва
+app.post('/send-review', (req, res) => {
+    const { name, email, message } = req.body;
+
+    const mailOptions = {
+        from: 'your-email@gmail.com',
+        to: 'recipient-email@example.com',
+        subject: 'New Review',
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return res.status(500).json({ success: false, message: error.message });
+        }
+        res.json({ success: true, message: 'Review submitted successfully' });
+    });
+});
+
+// Отправка заказа
+app.post('/send-order', (req, res) => {
+    const { name, email, item } = req.body;
+
+    const mailOptions = {
+        from: 'your-email@gmail.com',
+        to: 'recipient-email@example.com',
+        subject: 'New Order',
+        text: `Name: ${name}\nEmail: ${email}\nItem: ${item}`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return res.status(500).json({ success: false, message: error.message });
+        }
+        res.json({ success: true, message: 'Order placed successfully' });
+    });
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+Объяснение
+HTML:
+
+Формы для отправки отзывов и заказов.
+Кнопки для отправки данных.
+CSS:
+
+Стили для форм и кнопок.
+JavaScript (email.js):
+
+Функции для отправки данных на сервер для отзывов и заказов.
+Node.js и Express (server.js):
+
+Установка необходимых пакетов.
+Создание маршрутов для отправки отзывов и заказов.
+Настройка транспорта для nodemailer с использованием Gmail.
+Отправка писем на указанный адрес электронной почты.
+Этот пример демонстрирует базовую реализацию отправки писем на электронную почту при отзывах и заказах. Вы можете адаптировать его под свои нужды, добавив больше функциональности или изменив стили.
