@@ -1,0 +1,132 @@
+Сделать реализацию сортировки карточек по заголовкам на главной странице
+
+Для реализации сортировки карточек по заголовкам на главной странице, мы можем добавить кнопки для сортировки и использовать JavaScript для выполнения сортировки. Вот пример, как это можно сделать:
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Example</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sort-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .sort-buttons button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .sort-buttons button.active {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="sort-buttons">
+        <button id="sort-asc">Sort A-Z</button>
+        <button id="sort-desc">Sort Z-A</button>
+    </div>
+    <div class="container" id="card-container">
+        <!-- Карточки будут добавлены сюда с помощью JavaScript -->
+    </div>
+    <script src="sorting.js"></script>
+</body>
+</html>
+JavaScript (sorting.js)
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = [
+        { title: 'Card 1', content: 'This is a sample card.' },
+        { title: 'Card 2', content: 'This is a sample card.' },
+        { title: 'Card 3', content: 'This is a sample card.' },
+        { title: 'Card 4', content: 'This is a sample card.' },
+        { title: 'Card 5', content: 'This is a sample card.' },
+        { title: 'Card 6', content: 'This is a sample card.' },
+        { title: 'Card 7', content: 'This is a sample card.' },
+        { title: 'Card 8', content: 'This is a sample card.' },
+        // Добавьте больше карточек по мере необходимости
+    ];
+
+    const cardContainer = document.getElementById('card-container');
+    const sortAscButton = document.getElementById('sort-asc');
+    const sortDescButton = document.getElementById('sort-desc');
+
+    function renderCards(cards) {
+        cardContainer.innerHTML = '';
+        cards.forEach(card => {
+            const cardElement = document.createElement('div');
+            cardElement.className = 'card';
+            cardElement.innerHTML = `
+                <h2>${card.title}</h2>
+                <p>${card.content}</p>
+            `;
+            cardContainer.appendChild(cardElement);
+        });
+    }
+
+    function sortCards(order) {
+        const sortedCards = [...cards].sort((a, b) => {
+            if (order === 'asc') {
+                return a.title.localeCompare(b.title);
+            } else {
+                return b.title.localeCompare(a.title);
+            }
+        });
+        renderCards(sortedCards);
+    }
+
+    sortAscButton.addEventListener('click', () => {
+        sortCards('asc');
+        sortAscButton.classList.add('active');
+        sortDescButton.classList.remove('active');
+    });
+
+    sortDescButton.addEventListener('click', () => {
+        sortCards('desc');
+        sortDescButton.classList.add('active');
+        sortAscButton.classList.remove('active');
+    });
+
+    // Initial render
+    renderCards(cards);
+});
+Объяснение
+HTML:
+
+Контейнер для карточек (#card-container) и кнопки для сортировки (#sort-asc и #sort-desc).
+CSS:
+
+Стили для контейнера, карточек и кнопок сортировки.
+JavaScript:
+
+Массив cards содержит данные для карточек.
+Функция renderCards отображает карточки на странице.
+Функция sortCards сортирует карточки по заголовкам в порядке возрастания (A-Z) или убывания (Z-A).
+Обработчики событий для кнопок сортировки вызывают функцию sortCards и обновляют классы кнопок для визуального отражения текущего состояния сортировки.
+Этот пример демонстрирует базовую реализацию сортировки карточек по заголовкам на главной странице. Вы можете адаптировать его под свои нужды, добавив больше карточек или изменив стили.
