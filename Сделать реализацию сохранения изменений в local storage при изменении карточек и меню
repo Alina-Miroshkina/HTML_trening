@@ -1,0 +1,167 @@
+Сделать реализацию сохранения изменений в local storage при изменении карточек и меню
+
+Для реализации сохранения изменений в localStorage при изменении карточек и меню, мы можем использовать JavaScript для отслеживания изменений и сохранения их в localStorage. В этом примере мы создадим простую приложение, которое позволяет пользователю изменять карточки и меню, и сохранять эти изменения в localStorage.
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .menu {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .menu button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu button.active {
+            background-color: #0056b3;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            flex: 1 1 200px;
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu" id="menu">
+        <button data-category="all" class="active">All</button>
+        <button data-category="category1">Category 1</button>
+        <button data-category="category2">Category 2</button>
+        <button data-category="category3">Category 3</button>
+    </div>
+    <div class="container" id="card-container">
+        <!-- Карточки будут добавлены сюда с помощью JavaScript -->
+    </div>
+    <script src="localStorage.js"></script>
+</body>
+</html>
+JavaScript (localStorage.js)
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = [
+        { title: 'Card 1', content: 'This is a sample card.', category: 'category1' },
+        { title: 'Card 2', content: 'This is a sample card.', category: 'category2' },
+        { title: 'Card 3', content: 'This is a sample card.', category: 'category1' },
+        { title: 'Card 4', content: 'This is a sample card.', category: 'category3' },
+        { title: 'Card 5', content: 'This is a sample card.', category: 'category2' },
+        { title: 'Card 6', content: 'This is a sample card.', category: 'category3' },
+        { title: 'Card 7', content: 'This is a sample card.', category: 'category1' },
+        { title: 'Card 8', content: 'This is a sample card.', category: 'category2' },
+    ];
+
+    const cardContainer = document.getElementById('card-container');
+    const menu = document.getElementById('menu');
+
+    function renderCards(filteredCards) {
+        cardContainer.innerHTML = '';
+        filteredCards.forEach(card => {
+            const cardElement = document.createElement('div');
+            cardElement.className = 'card';
+            cardElement.innerHTML = `
+                <h2>${card.title}</h2>
+                <p>${card.content}</p>
+                <p>Category: ${card.category}</p>
+                <input type="text" placeholder="Edit title" value="${card.title}" oninput="updateCardTitle(this, ${cards.indexOf(card)})">
+            `;
+            cardContainer.appendChild(cardElement);
+        });
+    }
+
+    function filterCards(category) {
+        const filteredCards = category === 'all' ? cards : cards.filter(card => card.category === category);
+        renderCards(filteredCards);
+    }
+
+    function updateCardTitle(input, index) {
+        cards[index].title = input.value;
+        saveToLocalStorage();
+    }
+
+    function saveToLocalStorage() {
+        localStorage.setItem('cards', JSON.stringify(cards));
+        localStorage.setItem('activeCategory', document.querySelector('.menu button.active').dataset.category);
+    }
+
+    function loadFromLocalStorage() {
+        const savedCards = localStorage.getItem('cards');
+        const savedActiveCategory = localStorage.getItem('activeCategory');
+        if (savedCards) {
+            cards.length = 0; // Очистить текущий массив карточек
+            cards.push(...JSON.parse(savedCards));
+        }
+        if (savedActiveCategory) {
+            document.querySelectorAll('.menu button').forEach(button => {
+                button.classList.remove('active');
+                if (button.dataset.category === savedActiveCategory) {
+                    button.classList.add('active');
+                }
+            });
+            filterCards(savedActiveCategory);
+        } else {
+            filterCards('all');
+        }
+    }
+
+    menu.addEventListener('click', (event) => {
+        if (event.target.tagName === 'BUTTON') {
+            const category = event.target.dataset.category;
+            document.querySelectorAll('.menu button').forEach(button => {
+                button.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            filterCards(category);
+            saveToLocalStorage();
+        }
+    });
+
+    // Initial load
+    loadFromLocalStorage();
+});
+Объяснение
+HTML:
+
+Контейнер для карточек (#card-container) и меню для фильтрации по категориям (#menu).
+Кнопки в меню для выбора категории.
+CSS:
+
+Стили для контейнера, карточек и меню.
+JavaScript (localStorage.js):
+
+Массив cards содержит данные для карточек, включая категории.
+Функция renderCards отображает карточки на странице.
+Функция filterCards фильтрует карточки по выбранной категории и вызывает renderCards для отображения отфильтрованных карточек.
+Функция updateCardTitle
