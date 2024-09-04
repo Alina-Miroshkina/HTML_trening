@@ -1,0 +1,38 @@
+При сабмите формы собираются введенные в поля ввода данные, из данных формируется объект и выводится в консоль
+// пример объекта:
+
+// {
+//     name: input1.value,
+//     email: input2.value,
+//     reason: input3.value,
+//     phone: input4.value,
+//     message: textarea.value
+// }
+
+const contactForm = document.querySelector('#contact_section form');
+
+contactForm.addEventListener('submit', () => {
+
+});
+Решение : 
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const reason = document.getElementById('reason').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+
+        const formData = {
+            name: name,
+            email: email,
+            reason: reason,
+            phone: phone,
+            message: message
+        };
+
+        console.log(formData);
