@@ -1,0 +1,115 @@
+Сделать реализацию фильтрации карточек по категориям на главной странице
+
+Для реализации фильтрации карточек по категориям на главной странице, мы можем добавить выпадающий список для выбора категории и использовать JavaScript для выполнения фильтрации. Вот пример, как это можно сделать:
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtering Example</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="filter-buttons">
+        <select id="category-filter">
+            <option value="all">All Categories</option>
+            <option value="category1">Category 1</option>
+            <option value="category2">Category 2</option>
+            <option value="category3">Category 3</option>
+        </select>
+    </div>
+    <div class="container" id="card-container">
+        <!-- Карточки будут добавлены сюда с помощью JavaScript -->
+    </div>
+    <script src="filtering.js"></script>
+</body>
+</html>
+JavaScript (filtering.js)
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = [
+        { title: 'Card 1', content: 'This is a sample card.', category: 'category1' },
+        { title: 'Card 2', content: 'This is a sample card.', category: 'category2' },
+        { title: 'Card 3', content: 'This is a sample card.', category: 'category1' },
+        { title: 'Card 4', content: 'This is a sample card.', category: 'category3' },
+        { title: 'Card 5', content: 'This is a sample card.', category: 'category2' },
+        { title: 'Card 6', content: 'This is a sample card.', category: 'category3' },
+        { title: 'Card 7', content: 'This is a sample card.', category: 'category1' },
+        { title: 'Card 8', content: 'This is a sample card.', category: 'category2' },
+        // Добавьте больше карточек по мере необходимости
+    ];
+
+    const cardContainer = document.getElementById('card-container');
+    const categoryFilter = document.getElementById('category-filter');
+
+    function renderCards(filteredCards) {
+        cardContainer.innerHTML = '';
+        filteredCards.forEach(card => {
+            const cardElement = document.createElement('div');
+            cardElement.className = 'card';
+            cardElement.innerHTML = `
+                <h2>${card.title}</h2>
+                <p>${card.content}</p>
+                <p>Category: ${card.category}</p>
+            `;
+            cardContainer.appendChild(cardElement);
+        });
+    }
+
+    function filterCards(category) {
+        const filteredCards = category === 'all' ? cards : cards.filter(card => card.category === category);
+        renderCards(filteredCards);
+    }
+
+    categoryFilter.addEventListener('change', () => {
+        const selectedCategory = categoryFilter.value;
+        filterCards(selectedCategory);
+    });
+
+    // Initial render
+    renderCards(cards);
+});
+Объяснение
+HTML:
+
+Контейнер для карточек (#card-container) и выпадающий список для фильтрации по категориям (#category-filter).
+CSS:
+
+Стили для контейнера, карточек и выпадающего списка.
+JavaScript:
+
+Массив cards содержит данные для карточек, включая категории.
+Функция renderCards отображает карточки на странице.
+Функция filterCards фильтрует карточки по выбранной категории и вызывает renderCards для отображения отфильтрованных карточек.
+Обработчик события change для выпадающего списка вызывает функцию filterCards с выбранной категорией.
+Этот пример демонстрирует базовую реализацию фильтрации карточек по категориям на главной странице. Вы можете адаптировать его под свои нужды, добавив больше карточек или изменив стили.
