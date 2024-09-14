@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">V
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Button Actions</title>
+  <!-- Подключение Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Bootstrap Button Actions</h1>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <!-- Info button -->
+      <button type="button" class="btn btn-info" id="infoButton">Info Button</button>
+    </div>
+  </div>
+
+  <!-- Подключение Bootstrap JS и Popper.js -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Дополнительные действия с помощью JavaScript -->
+  <script>
+    document.getElementById('infoButton').addEventListener('click', function() {
+      // Пример дополнительного действия: показать алерт
+      alert('Info button clicked!');
+
+      // Пример дополнительного действия: изменить текст кнопки
+      this.textContent = 'Button Clicked!';
+
+      // Пример дополнительного действия: изменить стиль кнопки
+      this.classList.add('btn-success');
+      this.classList.remove('btn-info');
+    });
+  </script>
+</body>
+</html>
+Объяснение
+Подключение Bootstrap CSS:
+
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+Контейнер для кнопки:
+
+
+<div class="container mt-5">
+  <h1 class="text-center">Bootstrap Button Actions</h1>
+  <div class="d-flex flex-wrap justify-content-center gap-3">
+    <!-- Info button -->
+    <button type="button" class="btn btn-info" id="infoButton">Info Button</button>
+  </div>
+</div>
+Подключение Bootstrap JS и Popper.js:
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+Дополнительные действия с помощью JavaScript:
+
+
+<script>
+  document.getElementById('infoButton').addEventListener('click', function() {
+    // Пример дополнительного действия: показать алерт
+    alert('Info button clicked!');
+
+    // Пример дополнительного действия: изменить текст кнопки
+    this.textContent = 'Button Clicked!';
+
+    // Пример дополнительного действия: изменить стиль кнопки
+    this.classList.add('btn-success');
+    this.classList.remove('btn-info');
+  });
+</script>
+Объяснение JavaScript
+Получение элемента кнопки:
+
+
+document.getElementById('infoButton').addEventListener('click', function() {
+Показать алерт:
+
+
+alert('Info button clicked!');
+Изменить текст кнопки:
+
+
+this.textContent = 'Button Clicked!';
+Изменить стиль кнопки:
+
+
+this.classList.add('btn-success');
+this.classList.remove('btn-info');
+Этот код создает кнопку с классом btn-info и добавляет обработчик событий для выполнения дополнительных действий при нажатии на кнопку. В данном примере дополнительные действия включают показ алерта, изменение текста кнопки и изменение стиля кнопки. Если у вас возникнут дополнительные вопросы или проблемы, пожалуйста, дайте знать!
