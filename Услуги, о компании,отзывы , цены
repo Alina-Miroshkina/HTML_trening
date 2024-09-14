@@ -1,0 +1,111 @@
+ <!-- Услуги -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 id="services-title" class="text-center mb-5">Наши услуги</h2>
+            <div class="row text-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <i class="fas fa-spa fa-4x mb-3"></i>
+                    <h3 id="service1-title">Шведский массаж</h3>
+                    <p id="service1-description">Помогает уменьшить стресс, расслабиться и улучшить кровообращение.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <i class="fas fa-dumbbell fa-4x mb-3"></i>
+                    <h3 id="service2-title">Глубокий массаж</h3>
+                    <p id="service2-description">Снимает мышечное напряжение и улучшает гибкость.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <i class="fas fa-baby fa-4x mb-3"></i>
+                    <h3 id="service3-title">Массаж для беременных</h3>
+                    <p id="service3-description">Облегчает дискомфорт в период беременности.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О компании -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <img src="images/massage-team.jpg" alt="Команда массажистов" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <h2 id="about-title">О нас</h2>
+                    <p id="about-description">Наша команда профессиональных массажистов с многолетним опытом предлагает высококачественные услуги массажа на дому. Мы стремимся к тому, чтобы каждый клиент чувствовал себя комфортно и расслабленно.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 id="testimonials-title" class="text-center mb-5">Отзывы наших клиентов</h2>
+            <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h4 id="testimonial1-text">Отличный массаж! Рекомендую всем, кто ищет профессионала с вниманием к деталям.</h4>
+                        <em id="testimonial1-author">- Екатерина, Москва</em>
+                    </div>
+                    <div class="carousel-item">
+                        <h4 id="testimonial2-text">Массаж помог мне снять боль в спине после долгой работы за компьютером. Спасибо!</h4>
+                        <em id="testimonial2-author">- Иван, Санкт-Петербург</em>
+                    </div>
+                    <div class="carousel-item">
+                        <h4 id="testimonial3-text">Профессиональный подход и индивидуальное внимание к каждому клиенту.</h4>
+                        <em id="testimonial3-author">- Ольга, Казань</em>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Цены -->
+    <section id="pricing" class="py-5">
+        <div class="container">
+            <h2 id="pricing-title" class="text-center mb-5">Наши цены</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 id="pricing1-title">60 минут</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 id="pricing1-price">₽3500</h4>
+                            <a href="#booking" class="btn btn-outline-primary">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 id="pricing2-title">90 минут</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 id="pricing2-price">₽5000</h4>
+                            <a href="#booking" class="btn btn-outline-success">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 id="pricing3-title">120 минут</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 id="pricing3-price">₽6500</h4>
+                            <a href="#booking" class="btn btn-outline-warning">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
