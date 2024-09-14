@@ -1,0 +1,64 @@
+Подключение Bootstrap CSS:
+
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+Контейнер для кнопки:
+
+
+<div class="container mt-5">
+  <h1 class="text-center">Bootstrap Button Actions</h1>
+  <div class="d-flex flex-wrap justify-content-center gap-3">
+    <!-- Danger button -->
+    <button type="button" class="btn btn-danger" id="dangerButton">Danger Button</button>
+  </div>
+</div>
+Подключение Bootstrap JS и Popper.js:
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+Дополнительные действия с помощью JavaScript:
+
+
+<script>
+  document.getElementById('dangerButton').addEventListener('click', function() {
+    // Пример дополнительного действия: показать предупреждающее сообщение
+    if (confirm('Are you sure you want to perform this dangerous action?')) {
+      // Если пользователь подтверждает действие, выполняем его
+      alert('Dangerous action performed!');
+
+      // Пример дополнительного действия: изменить текст кнопки
+      this.textContent = 'Action Performed!';
+
+      // Пример дополнительного действия: изменить стиль кнопки
+      this.classList.add('btn-success');
+      this.classList.remove('btn-danger');
+    } else {
+      // Если пользователь отменяет действие, показываем сообщение
+      alert('Action cancelled!');
+    }
+  });
+</script>
+Объяснение JavaScript
+Получение элемента кнопки:
+
+
+document.getElementById('dangerButton').addEventListener('click', function() {
+Показать предупреждающее сообщение:
+
+
+if (confirm('Are you sure you want to perform this dangerous action?')) {
+Если пользователь подтверждает действие:
+
+
+alert('Dangerous action performed!');
+
+// Изменить текст кнопки
+this.textContent = 'Action Performed!';
+
+// Изменить стиль кнопки
+this.classList.add('btn-success');
+this.classList.remove('btn-danger');
+Если пользователь отменяет действие:
+
+
+alert('Action cancelled!');
