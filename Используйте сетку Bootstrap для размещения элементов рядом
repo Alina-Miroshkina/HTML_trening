@@ -1,0 +1,105 @@
+Пример кода
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Grid Example</title>
+  <!-- Подключение Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Bootstrap Grid Example</h1>
+    <div class="row">
+      <!-- Первый элемент -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <h5 class="card-title">Element 1</h5>
+            <p class="card-text">This is the first element.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Второй элемент -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <h5 class="card-title">Element 2</h5>
+            <p class="card-text">This is the second element.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Третий элемент -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Placeholder Image">
+          <div class="card-body">
+            <h5 class="card-title">Element 3</h5>
+            <p class="card-text">This is the third element.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Подключение Bootstrap JS и Popper.js -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+Объяснение
+Подключение Bootstrap CSS:
+
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+Контейнер для элементов:
+
+
+<div class="container mt-5">
+  <h1 class="text-center">Bootstrap Grid Example</h1>
+  <div class="row">
+Первый элемент:
+
+
+<div class="col-md-4">
+  <div class="card">
+    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Placeholder Image">
+    <div class="card-body">
+      <h5 class="card-title">Element 1</h5>
+      <p class="card-text">This is the first element.</p>
+    </div>
+  </div>
+</div>
+Второй элемент:
+
+
+<div class="col-md-4">
+  <div class="card">
+    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Placeholder Image">
+    <div class="card-body">
+      <h5 class="card-title">Element 2</h5>
+      <p class="card-text">This is the second element.</p>
+    </div>
+  </div>
+</div>
+Третий элемент:
+
+
+<div class="col-md-4">
+  <div class="card">
+    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Placeholder Image">
+    <div class="card-body">
+      <h5 class="card-title">Element 3</h5>
+      <p class="card-text">This is the third element.</p>
+    </div>
+  </div>
+</div>
+Подключение Bootstrap JS и Popper.js:
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
