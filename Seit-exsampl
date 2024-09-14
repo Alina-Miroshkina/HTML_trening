@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Массажный Салон</title>
+    <meta name="description" content="Профессиональные услуги массажа на дому. Запишитесь на сеанс с опытным массажистом.">
+    <meta name="keywords" content="массаж, домашний, услуга, массажист, ваш дом, максимальный уровень">
+    <meta name="author" content="Massage At Your Door">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="3 days">
+    <meta name="google-site-verification" content="your-google-site-verification-code">
+    <meta name="yandex-verification" content="your-yandex-verification-code">
+    <meta name="theme-color" content="#343a40">
+
+    <!-- Подключение favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./media/face book.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./media/вотсап.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="./media/telegram.png">
+    <link rel="manifest" href="./media/Ytub1111.jpg">
+    <link rel="mask-icon" href="./media/safari-pinned-tab.svg" color="#343a40">
+    <link rel="shortcut icon" type="./unnamed (1).png" href="./media/favicon.ico">
+
+    <!-- Подключение Bootstrap и кастомных стилей -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Заголовок и логотип -->
+    <section id="header" class="text-center py-5 bg-dark text-white">
+        <div class="container">
+            <img src="./media/LOGO.png" alt="Логотип компании" class="img-fluid" style="max-width: 300px;">
+            <h1 id="header-title" class="my-3">Массаж у Вас дома</h1>
+            <p id="header-subtitle" class="lead">Профессиональный массаж на дому в удобное для вас время.</p>
+            <a href="" class="btn btn-primary btn-lg mt-4">Записаться на массаж</a>
+        </div>
+    </section>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">Massage At Your Door</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">О компании</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Отзывы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Цены</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Контакты</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Язык
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('de')">Deutsch</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('ru')">Русский</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Услуги -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 id="services-title" class="text-center mb-5">Наши услуги</h2>
+            <div class="row text-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <i class="fas fa-spa fa-4x mb-3"></i>
+                    <h3 id="service1-title">Шведский массаж</h3>
+                    <p id="service1-description">Помогает уменьшить стресс, расслабиться и улучшить кровообращение.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <i class="fas fa-dumbbell fa-4x mb-3"></i>
+                    <h3 id="service2-title">Глубокий массаж</h3>
+                    <p id="service2-description">Снимает мышечное напряжение и улучшает гибкость.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <i class="fas fa-baby fa-4x mb-3"></i>
+                    <h3 id="service3-title">Массаж для беременных</h3>
+                    <p id="service3-description">Облегчает дискомфорт в период беременности.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О компании -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <img src="images/massage-team.jpg" alt="Команда массажистов" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <h2 id="about-title">О нас</h2>
+                    <p id="about-description">Наша команда профессиональных массажистов с многолетним опытом предлагает высококачественные услуги массажа на дому. Мы стремимся к тому, чтобы каждый клиент чувствовал себя комфортно и расслабленно.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 id="testimonials-title" class="text-center mb-5">Отзывы наших клиентов</h2>
+            <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h4 id="testimonial1-text">Отличный массаж! Рекомендую всем, кто ищет профессионала с вниманием к деталям.</h4>
+                        <em id="testimonial1-author">- Екатерина, Москва</em>
+                    </div>
+                    <div class="carousel-item">
+                        <h4 id="testimonial2-text">Массаж помог мне снять боль в спине после долгой работы за компьютером. Спасибо!</h4>
+                        <em id="testimonial2-author">- Иван, Санкт-Петербург</em>
+                    </div>
+                    <div class="carousel-item">
+                        <h4 id="testimonial3-text">Профессиональный подход и индивидуальное внимание к каждому клиенту.</h4>
+                        <em id="testimonial3-author">- Ольга, Казань</em>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Цены -->
+    <section id="pricing" class="py-5">
+        <div class="container">
+            <h2 id="pricing-title" class="text-center mb-5">Наши цены</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 id="pricing1-title">60 минут</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 id="pricing1-price">₽3500</h4>
+                            <a href="#booking" class="btn btn-outline-primary">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 id="pricing2-title">90 минут</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 id="pricing2-price">₽5000</h4>
+                            <a href="#booking" class="btn btn-outline-success">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 id="pricing3-title">120 минут</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 id="pricing3-price">₽6500</h4>
+                            <a href="#booking" class="btn btn-outline-warning">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма бронирования -->
+    <section id="booking" class="py-5 bg-light">
+        <div class="container">
+            <h2 id="booking-title" class="text-center mb-5">Записаться на массаж</h2>
+            <form id="booking-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Имя</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Телефон</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="service" class="form-label">Услуга</label>
+                    <select class="form-select" id="service" required>
+                        <option value="swedish">Шведский массаж</option>
+                        <option value="deep">Глубокий массаж</option>
+                        <option value="pregnancy">Массаж для беременных</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Дата</label>
+                    <input type="date" class="form-control" id="date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Время</label>
+                    <input type="time" class="form-control" id="time" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Записаться</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 id="contact-title" class="text-center mb-5">Контакты</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 id="contact-email">Email: massage@yourdoor.com</h4>
+                    <h4 id="contact-phone">Телефон: +7 (999) 123-45-67</h4>
+                </div>
+                <div class="col-lg-6">
+                    <h4 id="contact-address">Адрес: Москва, ул. Примерная, д. 10</h4>
+                    <a href="https://www.google.com/maps/dir//Ziegelhalde+17,+74429+Sulzbach-Laufen/@48.9481606,9.7722318,17425m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x479855f6df791769:0xf47307359646e2de!2m2!1d9.8546322!2d48.9481899?hl=ru&entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-light mt-3">Показать на карте</a>
+                </div>
+            </div>
+            <form id="contact-form" class="mt-5">
+                <div class="mb-3">
+                    <label for="contact-name" class="form-label">Имя</label>
+                    <input type="text" class="form-control" id="contact-name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contact-email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="contact-email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contact-message" class="form-label">Сообщение</label>
+                    <textarea class="form-control" id="contact-message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <p>© 2024 Massage At Your Door, Все права защищены.</p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
+__________________________
+CSS
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+#header {
+    background-image: url('../media/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+#header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+#header p {
+    font-size: 1.25rem;
+}
+
+.navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+#services {
+    background-color: #f8f9fa;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#services i {
+    color: #343a40;
+}
+
+#services h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#services p {
+    font-size: 1rem;
+}
+
+#about {
+    background-color: #fff;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#about p {
+    font-size: 1rem;
+}
+
+#testimonials {
+    background-color: #f8f9fa;
+}
+
+#testimonials h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#testimonials h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+#testimonials em {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+#pricing {
+    background-color: #fff;
+}
+
+#pricing h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#pricing .card {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#pricing .card-header {
+    background-color: #343a40;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#pricing .card-body h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#booking {
+    background-color: #f8f9fa;
+}
+
+#booking h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#booking form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact {
+    background-color: #343a40;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#contact h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #343a40;
+    color: #fff;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+JS
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Переключение языка
+    const translations = {
+        en: {
+            headerTitle: "Massage at Your Door",
+            headerSubtitle: "Professional massage services at your home at a convenient time for you.",
+            servicesTitle: "Our Services",
+            service1Title: "Swedish Massage",
+            service1Description: "Helps reduce stress, relax and improve blood circulation.",
+            service2Title: "Deep Tissue Massage",
+            service2Description: "Relieves muscle tension and improves flexibility.",
+            service3Title: "Pregnancy Massage",
+            service3Description: "Relieves discomfort during pregnancy.",
+            aboutTitle: "About Us",
+            aboutDescription: "Our team of professional massage therapists with years of experience offers high-quality massage services at home. We strive to ensure that every client feels comfortable and relaxed.",
+            testimonialsTitle: "Customer Reviews",
+            testimonial1Text: "Great massage! I recommend it to everyone who is looking for a professional with attention to detail.",
+            testimonial1Author: "- Ekaterina, Moscow",
+            testimonial2Text: "The massage helped me relieve back pain after a long day at the computer. Thank you!",
+            testimonial2Author: "- Ivan, St. Petersburg",
+            testimonial3Text: "Professional approach and individual attention to each client.",
+            testimonial3Author: "- Olga, Kazan",
+            pricingTitle: "Our Prices",
+            pricing1Title: "60 minutes",
+            pricing1Price: "₽3500",
+            pricing2Title: "90 minutes",
+            pricing2Price: "₽5000",
+            pricing3Title: "120 minutes",
+            pricing3Price: "₽6500",
+            bookingTitle: "Book a Massage",
+            contactTitle: "Contacts",
+            contactEmail: "Email: massage@yourdoor.com",
+            contactPhone: "Phone: +7 (999) 123-45-67",
+            contactAddress: "Address: Moscow, Example Street, 10"
+        },
+        de: {
+            headerTitle: "Massage an Ihrer Tür",
+            headerSubtitle: "Professionelle Massagedienste zu Hause zu einer für Sie günstigen Zeit.",
+            servicesTitle: "Unsere Dienstleistungen",
+            service1Title: "Schwedische Massage",
+            service1Description: "Hilft Stress abzubauen, sich zu entspannen und die Blutzirkulation zu verbessern.",
+            service2Title: "Tiefengewebsmassage",
+            service2Description: "Lindert Muskelspannungen und verbessert die Flexibilität.",
+            service3Title: "Schwangerschaftsmassage",
+            service3Description: "Lindert Unbehagen während der Schwangerschaft.",
+            aboutTitle: "Über uns",
+            aboutDescription: "Unser Team aus professionellen Massagetherapeuten mit jahrelanger Erfahrung bietet hochwertige Massagedienste zu Hause an. Wir bemühen uns, dass sich jeder Kunde wohl und entspannt fühlt.",
+            testimonialsTitle: "Kundenbewertungen",
+            testimonial1Text: "Großartige Massage! Ich empfehle es jedem, der einen Profi mit Detailgenauigkeit sucht.",
+            testimonial1Author: "- Ekaterina, Moskau",
+            testimonial2Text: "Die Massage half mir, Rückenschmerzen nach einem langen Tag am Computer zu lindern. Vielen Dank!",
+            testimonial2Author: "- Ivan, St. Petersburg",
+            testimonial3Text: "Professioneller Ansatz und individuelle Aufmerksamkeit für jeden Kunden.",
+            testimonial3Author: "- Olga, Kasan",
+            pricingTitle: "Unsere Preise",
+            pricing1Title: "60 Minuten",
+            pricing1Price: "₽3500",
+            pricing2Title: "90 Minuten",
+            pricing2Price: "₽5000",
+            pricing3Title: "120 Minuten",
+            pricing3Price: "₽6500",
+            bookingTitle: "Einen Massagetermin buchen",
+            contactTitle: "Kontakte",
+            contactEmail: "E-Mail: massage@yourdoor.com",
+            contactPhone: "Telefon: +7 (999) 123-45-67",
+            contactAddress: "Adresse: Moskau, Beispielstraße, 10"
+        },
+        ru: {
+            headerTitle: "Массаж у Вас дома",
+            headerSubtitle: "Профессиональные услуги массажа на дому в удобное для вас время.",
+            servicesTitle: "Наши услуги",
+            service1Title: "Шведский массаж",
+            service1Description: "Помогает уменьшить стресс, расслабиться и улучшить кровообращение.",
+            service2Title: "Глубокий массаж",
+            service2Description: "Снимает мышечное напряжение и улучшает гибкость.",
+            service3Title: "Массаж для беременных",
+            service3Description: "Облегчает дискомфорт в период беременности.",
+            aboutTitle: "О нас",
+            aboutDescription: "Наша команда профессиональных массажистов с многолетним опытом предлагает высококачественные услуги массажа на дому. Мы стремимся к тому, чтобы каждый клиент чувствовал себя комфортно и расслабленно.",
+            testimonialsTitle: "Отзывы наших клиентов",
+            testimonial1Text: "Отличный массаж! Рекомендую всем, кто ищет профессионала с вниманием к деталям.",
+            testimonial1Author: "- Екатерина, Москва",
+            testimonial2Text: "Массаж помог мне снять боль в спине после долгой работы за компьютером. Спасибо!",
+            testimonial2Author: "- Иван, Санкт-Петербург",
+            testimonial3Text: "Профессиональный подход и индивидуальное внимание к каждому клиенту.",
+            testimonial3Author: "- Ольга, Казань",
+            pricingTitle: "Наши цены",
+            pricing1Title: "60 минут",
+            pricing1Price: "₽3500",
+            pricing2Title: "90 минут",
+            pricing2Price: "₽5000",
+            pricing3Title: "120 минут",
+            pricing3Price: "₽6500",
+            bookingTitle: "Записаться на массаж",
+            contactTitle: "Контакты",
+            contactEmail: "Email: massage@yourdoor.com",
+            contactPhone: "Телефон: +7 (999) 123-45-67",
+            contactAddress: "Адрес: Москва, ул. Примерная, д. 10"
+        }
+    };
+
+    function changeLanguage(lang) {
+        document.getElementById('header-title').textContent = translations[lang].headerTitle;
+        document.getElementById('header-subtitle').textContent = translations[lang].headerSubtitle;
+        document.getElementById('services-title').textContent = translations[lang].servicesTitle;
+        document.getElementById('service1-title').textContent = translations[lang].service1Title;
+        document.getElementById('service1-description').textContent = translations[lang].service1Description;
+        document.getElementById('service2-title').textContent = translations[lang].service2Title;
+        document.getElementById('service2-description').textContent = translations[lang].service2Description;
+        document.getElementById('service3-title').textContent = translations[lang].service3Title;
+        document.getElementById('service3-description').textContent = translations[lang].service3Description;
+        document.getElementById('about-title').textContent = translations[lang].aboutTitle;
+        document.getElementById('about-description').textContent = translations[lang].aboutDescription;
+        docum
+
