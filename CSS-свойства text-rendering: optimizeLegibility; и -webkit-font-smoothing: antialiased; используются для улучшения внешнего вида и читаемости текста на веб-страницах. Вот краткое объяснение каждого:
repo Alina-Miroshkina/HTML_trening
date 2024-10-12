@@ -1,0 +1,10 @@
+Исходный код файла style.css:CSS-свойства text-rendering: optimizeLegibility; и -webkit-font-smoothing: antialiased; используются для улучшения внешнего вида и читаемости текста на веб-страницах. Вот краткое объяснение каждого:
+001 body p
+002 {
+003 background: white;
+004 color: black;
+005 font-family: Arial, sans-serif;
+006 font-size: 16px;
+007 line-height: 1.58;
+008 text-rendering: optimizeLegibility;
+009 -webkit-font-smoothing: antialiased;
