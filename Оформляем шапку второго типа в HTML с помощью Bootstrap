@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Example with Bootstrap</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для шапки */
+        .header {
+            padding: 20px 0;
+        }
+        .logo-image {
+            width: 128px;
+            height: auto;
+        }
+        .navigation {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        .navigation-link {
+            text-decoration: none;
+            color: #2E266F;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        .button {
+            display: flex;
+            align-items: center;
+            background-color: #2E266F;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .button-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .button-text {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header class="container header">
+        <div class="row">
+            <div class="col-2">
+                <a href="/" class="logo-link">
+                    <img src="img/Фото логотипа.png" alt="logo" class="logo-image">
+                </a>
+            </div>
+            <div class="col-6">
+                <nav>
+                    <ul class="navigation">
+                        <li class="navigation-icon">
+                            <a href="#" class="navigation-link">Womens</a>
+                        </li>
+                        <li class="navigation-icon">
+                            <a href="#" class="navigation-link">Mens</a>
+                        </li>
+                        <li class="navigation-icon">
+                            <a href="#" class="navigation-link">Goods</a>
+                        </li>
+                        <li class="navigation-icon">
+                            <a href="#" class="navigation-link">Brands</a>
+                        </li>
+                        <li class="navigation-icon">
+                            <a href="#" class="navigation-link">Blog</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-2">
+                <button class="button">
+                    <img src="img/Фото.png" alt="icon Card" class="button-icon">
+                    <span class="button-text">Cart</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Подключение Bootstrap JS и зависимостей -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
