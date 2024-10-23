@@ -1,0 +1,81 @@
+Оформляем границу
+Границу можно оформить при помощи трех свойств:
+свойство border-width задает толщину границы
+border-color – цвет границы
+border-style – тип границы. Его значения может быть:
+solid задает сплошную линию
+dotted – линия в виде точек
+dashed – линия в виде тире
+ridge – выпуклая линия
+double – двойная линия
+Можно сделать границу для отдельных сторон:
+border-left (левая граница). Например, border-left: 1px solid red;
+На экране мы увидим:
+Конечно! Вот пример HTML и CSS кода, который оформляет границу с использованием псевдоэлементов для создания декоративной линии под заголовком.
+
+### HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decorative Border Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="decorative-border">Welcome to Our Website</h1>
+    <p>This is an example of a decorative border under a heading.</p>
+  </div>
+</body>
+</html>
+```
+
+### CSS
+```css
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+.decorative-border {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.decorative-border::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  margin-top: 10px;
+}
+```
+
+### Объяснение
+1. **HTML**:
+   - Создаем простой контейнер с заголовком и параграфом.
+   - Заголовок имеет класс `decorative-border`, который будет использоваться для стилизации.
+
+2. **CSS**:
+   - Устанавливаем базовые стили для тела страницы, чтобы центрировать контент.
+   - Класс `.decorative-border` используется для стилизации заголовка.
+   - Псевдоэлемент `::after` добавляет декоративную линию под заголовком.
+   - Линия имеет градиентный фон, который переходит от одного цвета к другому.
+
+Этот пример демонстрирует, как можно использовать псевдоэлементы для создания декоративных элементов, таких как границы, без необходимости добавления дополнительных HTML-элементов.
