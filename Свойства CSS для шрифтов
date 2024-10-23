@@ -1,0 +1,123 @@
+Толщина, размер, красная строка и курсив текста
+За толщину / жирность текста отвечает свойство font-weight, оно
+дает возможность сделать текст жирным или отменить жирность, так,
+например, заголовки уже жирные, по умолчанию.
+Жирный текст делает значение bold
+font-weight: bold;
+Отменяет жирность значение normal
+font-weight: normal;
+Свойство font-style: italic; сделает текст курсивным, значение normal
+отменит курсив.
+Размер шрифта указывает свойство font-size, например:
+font-size: 30px;
+Свойство text-indent делает красную строку для абзацев:
+text-indent: 20px;
+Декорируем шрифт
+– text-transform: uppercase; – все буквы будут в тексте заглавные
+– text-transform: capitalize; – первый символ каждого слова
+в предложении будет заглавным, прочие символы свой вид
+не поменяют
+– text-transform: lowercase; – все символы текста станут строчными
+– text-decoration: none; – отменить подчеркивание текста, в ссылках,
+например.
+Межстрочный интервал
+Межстрочный интервал – это расстояние между линиями текста, то
+есть белый промежуток между ними. Свойство line-height задает
+высоту линии текста.
+Однако данное свойство не задает промежуток между строками
+текста, а задает высоту линии текста. Иными словами, реальный
+видимый промежуток между строками будет вычисляться так:
+line-height – font-size = видимое расстояние между строками.
+Например: font-size = 10px, line-height = 5 px.
+Вычислим реальное значение межстрочного интервала:
+line-height – font-size = 10px – 5px = 5px.
+Данный интервал не обязательно должен быть целое число
+в пикселах, он может быть в виде дроби. Например:
+font-size = 10px, line-height = 1.5.
+Вычислим реальное значение межстрочного интервала:
+line-height * font-size = 10px * 1.5 = 15px.
+Вычислим видимый белый промежуток между линиями текста:
+line-height – font-size = 15px – 10px = 5px.
+Преимущество такого способа задания line-height в том, что при
+изменении размера шрифта автоматически будет меняться
+и межстрочный интервал.
+Давайте рассмотрим примеры кода, которые демонстрируют использование всех упомянутых свойств CSS для стилизации текста.
+
+### HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Styling Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 class="bold-text">Bold Text Example</h1>
+  <p class="normal-text">Normal Text Example</p>
+  <p class="italic-text">Italic Text Example</p>
+  <p class="large-text">Large Text Example</p>
+  <p class="indented-text">Indented Text Example</p>
+  <p class="uppercase-text">Uppercase Text Example</p>
+  <p class="capitalize-text">Capitalize Text Example</p>
+  <p class="lowercase-text">Lowercase Text Example</p>
+  <a href="#" class="no-underline">No Underline Link</a>
+  <p class="line-height-example">Line Height Example</p>
+</body>
+</html>
+```
+
+### CSS
+```css
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.normal-text {
+  font-weight: normal;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+.large-text {
+  font-size: 30px;
+}
+
+.indented-text {
+  text-indent: 20px;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+.capitalize-text {
+  text-transform: capitalize;
+}
+
+.lowercase-text {
+  text-transform: lowercase;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.line-height-example {
+  font-size: 16px;
+  line-height: 1.5; /* Высота линии текста */
+}
+```
+
+### Объяснение
+1. **Толщина текста (`font-weight`)**:
+   - `font
