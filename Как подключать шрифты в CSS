@@ -1,0 +1,46 @@
+Конечно! Давайте рассмотрим, как можно подключить и использовать шрифт Roboto с Google Fonts в вашем HTML и CSS.
+
+### HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Fonts Example</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 class="roboto-text">Welcome to Our Website</h1>
+  <p class="roboto-text">This is an example of using the Roboto font from Google Fonts.</p>
+</body>
+</html>
+```
+
+### CSS (styles.css)
+```css
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.roboto-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; /* Устанавливаем вес шрифта, который мы выбрали */
+}
+```
+
+### Объяснение
+1. **HTML**:
+   - `<link rel="preconnect" href="https://fonts.gstatic.com">`: Устанавливает предварительное соединение с сервером Google Fonts для ускорения загрузки шрифтов.
+   - `<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">`: Подключает шрифт Roboto с весом 300.
+   - `<link rel="stylesheet" href="styles.css">`: Подключает внешний файл стилей.
+
+2. **CSS**:
+   - `font-family: 'Roboto', sans-serif;`: Устанавливает шрифт Roboto для всего текста на странице.
+   - `.roboto-text { font-family: 'Roboto', sans-serif; font-weight: 300; }`: Устанавливает шрифт Roboto и вес шрифта 300 для элементов с классом `roboto-text`.
+
+Этот пример демонстрирует, как можно подключить и использовать шрифт Roboto с Google Fonts в вашем проекте. Вы можете изменить вес шрифта и другие параметры в зависимости от ваших потребностей.
