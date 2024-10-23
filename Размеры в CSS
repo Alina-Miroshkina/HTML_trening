@@ -1,0 +1,84 @@
+Размеры, заданные в `em`, будут уменьшаться или увеличиваться вместе со шрифтом, что делает их очень удобными для адаптивного дизайна. Также существуют единицы измерения, которые работают относительно размеров окна браузера, такие как `vw`, `vh`, `vmin` и `vmax`. Эти единицы автоматически масштабируются при изменении размеров окна, что делает их полезными для создания отзывчивых дизайнов.
+
+Вот примеры использования этих единиц измерения в CSS:
+
+### Пример 1: Использование `em`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EM Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px; /* Базовый размер шрифта */
+    }
+
+    .em-example {
+      font-size: 2em; /* 2 раза больше базового размера шрифта */
+      padding: 1em; /* Отступы относительно размера шрифта */
+      border: 0.1em solid #000; /* Граница относительно размера шрифта */
+    }
+  </style>
+</head>
+<body>
+  <div class="em-example">
+    This text and padding are sized using em units.
+  </div>
+</body>
+</html>
+```
+
+### Пример 2: Использование `vw`, `vh`, `vmin`, `vmax`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viewport Units Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Высота окна */
+    }
+
+    .viewport-example {
+      width: 50vw; /* 50% ширины окна */
+      height: 50vh; /* 50% высоты окна */
+      padding: 2vmin; /* Отступы относительно наименьшего из vw и vh */
+      border: 0.5vmax solid #000; /* Граница относительно наибольшего из vw и vh */
+      background-color: #f4f4f4;
+      text-align: center;
+      line-height: 50vh; /* Высота строки относительно высоты окна */
+    }
+  </style>
+</head>
+<body>
+  <div class="viewport-example">
+    This text and padding are sized using viewport units.
+  </div>
+</body>
+</html>
+```
+
+### Объяснение
+1. **Пример 1**:
+   - Используется единица `em` для задания размеров шрифта, отступов и границ.
+   - Размеры будут масштабироваться относительно базового размера шрифта, заданного в `body`.
+
+2. **Пример 2**:
+   - Используются единицы `vw`, `vh`, `vmin` и `vmax` для задания размеров элемента.
+   - Размеры будут автоматически масштабироваться при изменении размеров окна браузера.
+   - `vw` и `vh` задают размеры относительно ширины и высоты окна соответственно.
+   - `vmin` задает размеры относительно наименьшего из `vw` и `vh`.
+   - `vmax` задает размеры относительно наибольшего из `vw` и `vh`.
+
+Эти примеры демонстрируют, как можно использовать различные единицы измерения для создания адаптивных и отзывчивых дизайнов в CSS.
