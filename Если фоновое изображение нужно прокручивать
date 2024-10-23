@@ -1,0 +1,149 @@
+Если фоновое изображение нужно прокручивать вместе
+с текстом
+Свойство background-attachment указывает каким образом
+прокручивается фоновое изображение элемента: вместе с текстом или
+текст будет скользить по картинке. Например:
+background-attachment: scroll;
+fixed – изображение фона будет неподвижным а текст будет
+скользить по нему
+scroll – изображение фона будет прокручиваться вместе с текстом
+local – фон фиксируется, учитывая поведение элемента. Если
+элемент имеет прокрутку, то фон будет прокручиваться вместе
+с текстом, однако фон, который выходит за рамки элемента остается
+на месте.Конечно! Вот примеры кода для каждого из указанных вариантов использования свойства `background-attachment`.
+
+### Пример 1: `background-attachment: scroll;`
+Фоновое изображение прокручивается вместе с текстом.
+
+#### HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Attachment Scroll</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-container scroll">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</body>
+</html>
+```
+
+#### CSS
+```css
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.background-container {
+  background-image: url("foto.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  height: 200vh; /* Высота контейнера больше высоты окна просмотра для демонстрации прокрутки */
+}
+```
+
+### Пример 2: `background-attachment: fixed;`
+Фоновое изображение остается неподвижным, а текст прокручивается по нему.
+
+#### HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Attachment Fixed</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-container fixed">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</body>
+</html>
+```
+
+#### CSS
+```css
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.background-container {
+  background-image: url("foto.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  height: 200vh; /* Высота контейнера больше высоты окна просмотра для демонстрации прокрутки */
+}
+```
+
+### Пример 3: `background-attachment: local;`
+Фон фиксируется, учитывая поведение элемента. Если элемент имеет прокрутку, то фон будет прокручиваться вместе с текстом, однако фон, который выходит за рамки элемента, остается на месте.
+
+#### HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Attachment Local</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-container local">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</body>
+</html>
+```
+
+#### CSS
+```css
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.background-container {
+  background-image: url("foto.png");
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  height: 200vh; /* Высота контейнера больше высоты окна просмотра для демонстрации прокрутки */
+  overflow-y: scroll; /* Добавляем прокрутку для демонстрации local */
+}
+```
+
+### Объяснение
+1. **Пример 1**:
+   - `background-attachment: scroll;`: Фоновое изображение прокручивается вместе с текстом.
+
+2. **Пример 2**:
+   - `background-attachment: fixed;`: Фоновое изображение остается неподвижным, а текст прокручивается по нему.
+
+3. **Пример 3**:
+   - `background-attachment: local;`: Фон фиксируется, учитывая поведение элемента. Если элемент имеет прокрутку, то фон будет прокручиваться вместе с текстом, однако фон, который выходит за рамки элемента, остается на месте.
+
+Эти примеры демонстрируют различные способы использования свойства `background-attachment` для управления поведением фонового изображения при прокрутке страницы.
