@@ -1,0 +1,94 @@
+Скругление углов
+Скругляет углы свойство border-radius, причем если задать borderradius:
+50рх; получиться круг.
+Если нужно для разных углов задать разное скругление, пишем:
+border-radius: 10px 20px 10px 40px;
+Здесь первое значение задает скругление для верхнего левого угла,
+второе – для верхнего правого, третье – для нижнего правого угла,
+а четвертое – для нижнего левого угла.
+Причем скругление можно задавать в процентах. Так border-radius:
+50%; также образует круг.
+Да, вы абсолютно правы. Свойство `border-radius` в CSS позволяет скруглять углы элементов. Вот несколько примеров, которые демонстрируют различные способы использования `border-radius`.
+
+### Пример 1: Круглый элемент
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Radius Example</title>
+  <style>
+    .circle {
+      width: 100px;
+      height: 100px;
+      background-color: #ff7e5f;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle"></div>
+</body>
+</html>
+```
+
+### Пример 2: Разные скругления для разных углов
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Radius Example</title>
+  <style>
+    .custom-corners {
+      width: 200px;
+      height: 100px;
+      background-color: #feb47b;
+      border-radius: 10px 20px 30px 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-corners"></div>
+</body>
+</html>
+```
+
+### Пример 3: Скругление в процентах
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Radius Example</title>
+  <style>
+    .percentage-corners {
+      width: 200px;
+      height: 100px;
+      background-color: #85c1e9;
+      border-radius: 10% 20% 30% 40%;
+    }
+  </style>
+</head>
+<body>
+  <div class="percentage-corners"></div>
+</body>
+</html>
+```
+
+### Объяснение
+1. **Пример 1**:
+   - Создаем круглый элемент с помощью `border-radius: 50%;`.
+   - Это работает, если элемент имеет одинаковую ширину и высоту.
+
+2. **Пример 2**:
+   - Задаем разные значения скругления для каждого угла: верхний левый (10px), верхний правый (20px), нижний правый (30px), нижний левый (40px).
+
+3. **Пример 3**:
+   - Задаем скругление в процентах: верхний левый (10%), верхний правый (20%), нижний правый (30%), нижний левый (40%).
+   - Проценты рассчитываются относительно соответствующих размеров элемента (ширина и высота).
+
+Эти примеры демонстрируют, как можно использовать `border-radius` для создания различных форм и скруглений углов элементов.
