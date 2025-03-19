@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Example</title>
+</head>
+<body>
+  <div id="hiddenDiv" hidden>Этот текст скрыт.</div>
+  <button onclick="toggleVisibility()">Показать/Скрыть</button>
+
+  <script>
+    function toggleVisibility() {
+      const div = document.getElementById('hiddenDiv');
+      if (div.hasAttribute('hidden')) {
+        div.removeAttribute('hidden');
+      } else {
+        div.setAttribute('hidden', '');
+      }
+    }
+  </script>
+</body>
+</html>
