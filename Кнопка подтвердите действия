@@ -1,0 +1,60 @@
+HTML (index.html):
+
+Copy
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример HTML с инструментами</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Заголовок страницы</h1>
+  <p>Это параграф текста.</p>
+  <button id="myButton">Нажми меня</button>
+  <script src="script.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+Copy
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+p {
+  color: #666;
+  line-height: 1.6;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+JavaScript (script.js):
+
+Copy
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('myButton').addEventListener('click', function() {
+    alert('Кнопка была нажата!');
+  });
+});
