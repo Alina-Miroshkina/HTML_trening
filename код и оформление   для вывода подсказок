@@ -1,0 +1,174 @@
+Интерактивные подсказки
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интерактивные подсказки</title>
+  <style>
+    :root {
+      --primary-color: #4361ee;
+      --text-color: #2b2d42;
+      --bg-color: #f8f9fa;
+      --tooltip-bg: #ffffff;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    
+    h1::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--primary-color);
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+    
+    .tooltip-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .tooltip-item {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      border-left: 4px solid var(--primary-color);
+    }
+    
+    .tooltip-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tooltip-trigger {
+      font-weight: 600;
+      color: var(--primary-color);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .tooltip-trigger::after {
+      content: '?';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+    
+    .tooltip-content {
+      position: absolute;
+      bottom: calc(100% + 15px);
+      left: 0;
+      width: 280px;
+      background: var(--tooltip-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 10;
+      transform: translateY(10px);
+    }
+    
+    .tooltip-content::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 20px;
+      border-width: 8px;
+      border-style: solid;
+      border-color: var(--tooltip-bg) transparent transparent transparent;
+    }
+    
+    .tooltip-trigger:hover + .tooltip-content,
+    .tooltip-content:hover {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .tooltip-content p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .tooltip-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .tooltip-content {
+        width: 100%;
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Интерактивные подсказки</h1>
+  
+  <div class="tooltip-container">
+    <div class="tooltip-item">
+      <span class="tooltip-trigger">Основные настройки</span>
+      <div class="tooltip-content">
+        <p>Здесь вы можете настроить основные параметры системы. Все изменения сохраняются автоматически.</p>
+      </div>
+      <p>Управление базовыми функциями приложения</p>
+    </div>
+    
+    <div class="tooltip-item">
+      <span class="tooltip-trigger">Безопасность</span>
+      <div class="tooltip-content">
+        <p>Настройки безопасности включают пароли, двухфакторную аутентификацию и контроль доступа.</p>
+      </div>
+      <p>Защитите свою учетную запись</p>
+    </div>
+    
+    <div class="tooltip-item">
+      <span class="tooltip-trigger">Уведомления</span>
+      <div class="tooltip-content">
+        <p>Настройте, какие уведомления и каким способом вы хотите получать (email, push-уведомления).</p>
+      </div>
+      <p>Контроль поступающих сообщений</p>
+    </div>
+    
+    <div class="tooltip-item">
+      <span class="tooltip-trigger">Внешний вид</span>
+      <div class="tooltip-content">
+        <p>Измените тему оформления, размер шрифта и другие визуальные параметры интерфейса.</p>
+      </div>
+      <p>Персонализация интерфейса</p>
+    </div>
+  </div>
+</body>
+</html>
