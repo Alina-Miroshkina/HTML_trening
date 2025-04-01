@@ -1,0 +1,55 @@
+Свойства object-fit и object-position
+https://html5book.ru/svoystva-object-fit-i-object-position/
+object-fit:
+<section>
+<h1>Свойство object-fit</h1>
+<div class="wrapper">
+    <figure class="origin">
+        <img src="https://html5book.ru/wp-content/uploads/2016/12/photo-small-obj.jpg">
+        <figcaption><kbd>Оригинал изображения - 300*200px</kbd></figcaption>
+    </figure>
+    <figure class="fill">
+        <img src="https://html5book.ru/wp-content/uploads/2016/12/photo-small-obj.jpg">
+        <figcaption><kbd>width: 300px;<br> height: 150px; <br>object-fit: fill;</kbd></figcaption>
+    </figure>
+    <figure class="contain">
+        <img src="https://html5book.ru/wp-content/uploads/2016/12/photo-small-obj.jpg">
+        <figcaption><kbd>width: 300px;<br> height: 150px; <br>object-fit: contain;</kbd></figcaption>
+    </figure>
+    <figure class="cover">
+        <img src="https://html5book.ru/wp-content/uploads/2016/12/photo-small-obj.jpg">
+        <figcaption><kbd>width: 300px;<br> height: 150px; <br>object-fit: cover;</kbd></figcaption>
+    </figure>
+    <figure class="scale-down">
+        <img src="https://html5book.ru/wp-content/uploads/2016/12/photo-small-obj.jpg">
+        <figcaption><kbd>width: 300px;<br> height: 150px; <br>object-fit: scale-down;</kbd></figcaption>
+    </figure>
+    <figure class="none">
+        <img src="https://html5book.ru/wp-content/uploads/2016/12/photo-small-obj.jpg">
+        <figcaption><kbd>width: 300px;<br> height: 150px; <br>object-fit: none;</kbd></figcaption>
+    </figure>
+</div>
+</section>
+
+
+object-position:
+
+<h1>Свойство object-position</h1>
+<div>
+<figure class="one">
+  <img src="https://html5book.ru/wp-content/uploads/2016/12/photo-small-obj.jpg">
+  <figcaption><kbd>object-fit: fill;<br>object-position: 20px 20px;</kbd></figcaption>
+</figure>
+<figure class="two">
+  <img src="https://html5book.ru/wp-content/uploads/2016/12/photo-small-obj.jpg">
+  <figcaption><kbd>object-fit: contain;<br>object-position: right bottom;</kbd></figcaption>
+</figure>
+<figure class="three">
+  <img src="https://html5book.ru/wp-content/uploads/2016/12/photo-small-obj.jpg">
+  <figcaption><kbd>object-fit: cover;<br>object-position: 20% 50px;</kbd></figcaption>
+</figure>
+<figure class="four">
+  <img src="https://html5book.ru/wp-content/uploads/2016/12/photo-small-obj.jpg">
+  <figcaption><kbd>object-fit: scale-down;<br>object-position: 0 0;</kbd></figcaption>
+</figure>
+</div>
