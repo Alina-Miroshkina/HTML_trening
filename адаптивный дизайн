@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример современного сайта</title>
+  <style>
+    /* CSS переменные для цветов и размеров */
+    :root {
+      --primary-color: #4361ee;
+      --secondary-color: #3f37c9;
+      --accent-color: #f72585;
+      --light-bg: #f8f9fa;
+      --dark-text: #212529;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --border-radius: 8px;
+      --spacing: 1rem;
+    }
+
+    /* Базовые стили */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark-text);
+      background-color: var(--light-bg);
+    }
+
+    /* Семантичные элементы */
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: var(--spacing);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: white;
+      box-shadow: var(--shadow);
+    }
+
+    nav a {
+      color: var(--dark-text);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* Карточки с переиспользуемыми стилями */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--spacing);
+      padding: var(--spacing);
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: var(--spacing);
+    }
+
+    .card h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      margin-top: var(--spacing);
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--secondary-color);
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Мой современный сайт</h1>
+    <p>Пример использования CSS переменных и семантичной разметки</p>
+  </header>
+
+  <nav>
+    <a href="#">Главная</a>
+    <a href="#">О нас</a>
+    <a href="#">Услуги</a>
+    <a href="#">Контакты</a>
+  </nav>
+
+  <main class="card-container">
+    <article class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Пример изображения">
+      <div class="card-content">
+        <h3>Карточка 1</h3>
+        <p>Описание карточки с примером текста. Используем CSS переменные для единообразия стилей.</p>
+        <a href="#" class="btn">Подробнее</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Пример изображения">
+      <div class="card-content">
+        <h3>Карточка 2</h3>
+        <p>Еще один пример карточки с переиспользуемыми стилями через классы.</p>
+        <a href="#" class="btn">Подробнее</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://via.placeholder.com/300x200" alt="Пример изображения">
+      <div class="card-content">
+        <h3>Карточка 3</h3>
+        <p>Все цвета и отступы заданы через переменные для удобства изменения.</p>
+        <a href="#" class="btn">Подробнее</a>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
