@@ -1,0 +1,80 @@
+В Materialize CSS Navbar (навигационная панель) предоставляет множество возможностей для настройки и адаптации под различные нужды. Вот некоторые из них:
+
+Расположение логотипа:
+
+Логотип можно размещать как слева, так и справа. Для этого используются классы left и right.
+Расположение ссылок:
+
+Ссылки могут быть расположены как слева, так и справа от логотипа. Используйте классы left и right для управления их расположением.
+Фиксированная навигационная панель:
+
+Навигационная панель может быть зафиксирована в верхней части страницы, чтобы она всегда оставалась видимой при прокрутке. Для этого используется класс navbar-fixed.
+Copy
+<nav class="navbar-fixed">
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+        </ul>
+    </div>
+</nav>
+Навигационная панель с тенью:
+
+Можно добавить тень к навигационной панели для улучшения визуального эффекта. Используйте класс z-depth-<level>, где <level> может быть от 0 до 5.
+Copy
+<nav class="z-depth-3">
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+        </ul>
+    </div>
+</nav>
+Цвет навигационной панели:
+
+Можно изменить цвет навигационной панели, используя классы цветов Materialize CSS, такие как red, blue, green и т.д.
+Copy
+<nav class="blue">
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+        </ul>
+    </div>
+</nav>
+Навигационная панель с поиском:
+
+Можно добавить поле поиска в навигационную панель.
+Copy
+<nav>
+    <div class="nav-wrapper">
+        <form>
+            <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </div>
+</nav>
+Навигационная панель с выпадающим меню:
+
+Можно добавить выпадающее меню в навигационную панель.
+Copy
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Link 1</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">Dropdown Item 1</a></li>
+    <li><a href="#!">Dropdown Item 2</a></li>
+</ul>
