@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+   
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+  <!DOCTYPE html>
+  <html lang="ru">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Легендарные автомобили</title>
+      <style>
+          body {
+              font-family: 'Arial', sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #f5f5f5;
+              color: #333;
+          }
+          
+          .hero {
+              background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                          url('https://images.unsplash.com/photo-1504215680853-026ed2a45def?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+              background-size: cover;
+              background-position: center;
+              height: 100vh;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              color: white;
+              padding: 0 20px;
+          }
+          
+          .hero h1 {
+              font-size: 3rem;
+              margin-bottom: 20px;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+          }
+          
+          .hero p {
+              font-size: 1.5rem;
+              max-width: 800px;
+              margin-bottom: 40px;
+              line-height: 1.6;
+          }
+          
+          .cta-button {
+              display: inline-block;
+              background-color: #e74c3c;
+              color: white;
+              padding: 15px 40px;
+              font-size: 1.2rem;
+              text-decoration: none;
+              border-radius: 30px;
+              transition: all 0.3s ease;
+              text-transform: uppercase;
+              font-weight: bold;
+              letter-spacing: 1px;
+              border: 2px solid #e74c3c;
+          }
+          
+          .cta-button:hover {
+              background-color: transparent;
+              color: #e74c3c;
+          }
+          
+          .arrow {
+              margin-top: 20px;
+              font-size: 2rem;
+              animation: bounce 2s infinite;
+          }
+          
+          @keyframes bounce {
+              0%, 20%, 50%, 80%, 100% {
+                  transform: translateY(0);
+              }
+              40% {
+                  transform: translateY(-20px);
+              }
+              60% {
+                  transform: translateY(-10px);
+              }
+          }
+      </style>
+  </head>
+  <body>
+      <section class="hero">
+          <h1>Покорите дороги за рулём легендарных автомобилей!</h1>
+          <p>От эксклюзивных спорткаров до гоночных шедевров — выбирайте мечту, садитесь за руль и ощутите мощь премиального авто на полную!</p>
+          <a href="#" class="cta-button">Посмотреть автомобили</a>
+          <div class="arrow">></div>
+      </section>
+  </body>
+  </html>
+  </body>
+</html>
